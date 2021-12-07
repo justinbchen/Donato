@@ -30,9 +30,38 @@
                     <div class="tab-pane fade show active" id="v-pills-location" role="tabpanel" aria-labelledby="v-pills-location-tab">
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
+
+                    <!-- Enter Items Tab -->
                     <div class="tab-pane fade" id="v-pills-items" role="tabpanel" aria-labelledby="v-pills-items-tab">
-                        <button type="button" class="btn btn-success btn-next">Continue</button>
+                      <div class="item-field" id="item-1">
+                        <h1>Item 1</h1>
+                        <label for="type-1">Type</label>
+                        <select class="form-select" aria-label="select type" id="type-1">
+                            <option selected>- Select -</option>
+                            <option value="1">Food</option>
+                            <option value="2">Clothes</option>
+                            <option value="3">Books</option>
+                            <option value="4">Toys</option>
+                            <option value="5">Furniture</option>
+                            <option value="6">Appliances</option>
+                            <option value="7">Other</option>
+                        </select>
+
+                        <label for="quant-1">Quantity</label>
+                        <input type="number" id="quant-1" name="quant-1" min="0" value="1">
+
+                        <label for="desc-1">Description</label>
+                        <textarea id="desc-1" name="desc-1" rows="4" cols="20"
+                        placeholder="Describe your items"
+                        >
+
+                        </textarea>
+
+
+                      </div>
+                      <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
+
                     <div class="tab-pane fade" id="v-pills-time" role="tabpanel" aria-labelledby="v-pills-time-tab">
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
