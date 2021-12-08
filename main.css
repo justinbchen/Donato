@@ -71,12 +71,6 @@ li {
     background-image: url("./images/house-fill.svg");
 
 }
-.common-line .common-icon{
-}
-
-.common-line .active-icon{
-    /* background-image: url("./images/1_active.png"); */
-}
 .right-icon{
     width:400px ;
     height: 146px;
