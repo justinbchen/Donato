@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+.border {
+    border: 5px;
+}
+
 .horizontal {
     text-align:center;
 }
@@ -15,4 +19,9 @@
 
 .padded {
     padding: 10% 0;
+}
+
+.page {
+    margin-left: 100%;
+    width: 100%;
 }
