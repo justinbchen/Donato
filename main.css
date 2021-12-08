@@ -34,6 +34,10 @@
     border:2px solid;
 }
 
-.test {
-    margin: 0 auto;
+.address:hover {
+    cursor:pointer;
+}
+
+li {
+    list-style:none;
 }
