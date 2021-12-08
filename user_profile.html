@@ -5,21 +5,118 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="main.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
 
     <title>Donato</title>
   </head>
   <body>
     <div class='container'>
         <h1>Donato</h1>
+
+        <a href="./index.html" class="btn btn-primary profile">Make a Donation</a>
+
         <div class='nav flex-row'>
             <div class="d-flex align-items-start">
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active" id="v-pills-user-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user-profile" type="button" role="tab" aria-controls="v-pills-location" aria-selected="true">User Profile</button>
-                <button class="nav-link" id="v-pills-donation-schedule-tab" data-bs-toggle="pill" data-bs-target="#v-pills-donation-schedule" type="button" role="tab" aria-controls="v-pills-items" aria-selected="false">Donation Schedule</button>
-                <button class="nav-link" id="v-pills-donation-history-tab" data-bs-toggle="pill" data-bs-target="#v-pills-donation-history" type="button" role="tab" aria-controls="v-pills-time" aria-selected="false">Donation History</button>
+                  <button class="nav-link active" id="v-pills-user-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user-profile" type="button" role="tab" aria-controls="v-pills-location" aria-selected="true">User Profile</button>
+                  <button class="nav-link" id="v-pills-donation-schedule-tab" data-bs-toggle="pill" data-bs-target="#v-pills-donation-schedule" type="button" role="tab" aria-controls="v-pills-items" aria-selected="false">Donation Schedule</button>
+                  <button class="nav-link" id="v-pills-donation-history-tab" data-bs-toggle="pill" data-bs-target="#v-pills-donation-history" type="button" role="tab" aria-controls="v-pills-time" aria-selected="false">Donation History</button>
                 </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-user-profile" role="tabpanel" aria-labelledby="v-pills-user-profile-tab">
+                      <!--TODO-->
+                      <div class="page">
+
+                        <div class="border">
+                                <div class="p-2">
+                                    <div class="center">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Bob_the_builder.jpg" width="100px">
+                                    </div>
+                                    <div class="center item_title">
+                                        Booby BuildMaster
+                                    </div>
+                                </div>
+    
+                                <div class="p-2">
+                                    <div class="item_title center">Total Points: 250</div>
+                                </div>
+                                <!--maybe delete-->
+                                <div class="p-2">
+                                    <div>possible have you are in % of donators</div>
+                                </div>
+
+                                <div class="p-2 center">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmationModal">Redeem Points</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirmationModalLabel">header</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">body</div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!--end maybe delete-->
+                                
+                                <div class="p-2">
+                                    <div class="item_title center">Saved Addresses</div>
+                                    <div>70 Morningside Dr, New York, NY 10027<br>
+                                        556 W 114th St, New York, NY 10027</div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title center">Phone Number</div>
+                                    <div class="center">111-222-3333</div>
+                                </div>
+
+                                <div class="p-2 center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmationModal">Edit Profile</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmationModalLabel">header</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">body</div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+
+
+                        </div>
+                      </div>
+                      <!--endtodo-->
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-donation-schedule" role="tabpanel" aria-labelledby="v-pills-donation-schedule-tab">
+                      <!--TODO-->
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-donation-history" role="tabpanel" aria-labelledby="v-pills-donation-history-tab">
+                      <!--TODO-->
+                  </div>
+              </div>
             </div>
         </div>
     </div>
