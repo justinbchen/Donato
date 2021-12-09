@@ -30,7 +30,7 @@ document.getElementById("update_nn_button").addEventListener('click', () => {
         update_name(obj["name"]);
         document.getElementById("name").setAttribute('placeholder', obj["name"]);
     }
-    else if (obj["phone"] != "") {
+    if (obj["phone"] != "") {
         update_phone_number(obj["phone"]);
         document.getElementById("phone").setAttribute('placeholder', obj["phone"]);
     }
