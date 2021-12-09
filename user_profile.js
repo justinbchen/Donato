@@ -1,4 +1,43 @@
+//name
+var starting_name = 'Bobby BuildMaster';
+update_name(starting_name);
+
+function update_name(name) {
+    profile_name = document.getElementById("profile_name");
+    profile_name.innerHTML = name;
+}
+
+//phone
 var starting_phone_number = '111-222-333';
+update_phone_number(starting_phone_number);
+
+function update_phone_number(phone_number) {
+    profile_phone_number = document.getElementById("profile_phone_number");
+    profile_phone_number.innerHTML = phone_number;
+}
+
+//left column modal
+document.getElementById("update_nn_button").addEventListener('click', () => {
+    let form = document.getElementById("update_nn_form");
+    let obj = {};
+    for (let i = 0 ; i < form.length ; i++) {
+        let key = form[i].id;
+        let value = form[i].value;
+        obj[key] = value;
+    }
+
+    if (obj["name"] != "") {
+        update_name(obj["name"]);
+        document.getElementById("name").setAttribute('placeholder', obj["name"]);
+    }
+    else if (obj["phone"] != "") {
+        update_phone_number(obj["phone"]);
+        document.getElementById("phone").setAttribute('placeholder', obj["phone"]);
+    }
+});
+
+
+//addresses
 var starting_addresses = [
     {
         address_field_1: "70 Morningside Drive",
@@ -155,14 +194,12 @@ function update_saved_addresses() {
 }
 
 //add functionality
-const add_btn = document.querySelector(".add_new_button")
-add_btn.addEventListener('click', () => {
+document.querySelector("#add_new_button").addEventListener('click', () => {
     document.getElementById("add_new_address_form").classList.toggle("d-none");
 });
 
 document.getElementById("add_address_form_button").addEventListener('click', () => {
     form = document.getElementById("add_new_address_form");
-    console.log(form);
     let obj = {};
     for (let i = 0 ; i < form.length ; i++) {
         let key = form[i].id;
@@ -186,7 +223,6 @@ document.getElementById("add_address_form_button").addEventListener('click', () 
         alert('pease enter postal code');
         return;
     }
-    console.log(obj);
     add_address(obj);
 });
 
