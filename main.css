@@ -34,13 +34,17 @@
     border:2px solid;
 }
 
-.address:hover {
-    cursor:pointer;
+#addresses {
+    list-style-type:none;
+    padding: 0;
 }
 
-li {
-    list-style:none;
+#saved_addresses ul {
+    padding: 0;
+    list-style-type: none;
 }
+
+
 #four-left, #four-right{
     display: inline-block;
 }

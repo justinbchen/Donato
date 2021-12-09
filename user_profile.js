@@ -1,4 +1,5 @@
 const html_addresses_li = document.querySelector('#addresses');
+var phone_number = '111-222-333'
 const addresses = [
     {
         address_field_1: "70 Morningside Drive",
@@ -20,22 +21,21 @@ let html = "";
 
 addresses.forEach( address => {
     html += `
-        <li class="address border mb-5 rounded-3">
-                <div class="p-2 flex-grow-1 bd-highlight">
-                    ${address.address_field_1} ${address.address_field_2} <br>
+        <li class="border mb-5 rounded-3" id="addresses_li">
+                <div class="p-2 flex-grow-1 bd-highlight address_string">
+                    • ${address.address_field_1} ${address.address_field_2} <br>
                     ${address.city}, ${address.state} ${address.postal_code}
                 </div>
                 <button type="button" class="btn btn-success btn-sm edit">Edit</button>
                 <button type="button" class="btn btn-success btn-sm delete">Delete</button>
 
             <div class="d-none">
-            <form>
-                <div class="mb-3 mt-3">
+            <form class="edit_address_form">
                 <div class="mb-3">
-                    <input type="text" id="address-1" class="form-control" placeholder="Address Field 1">
+                    <input type="text" id="address_field_1" class="form-control" placeholder="Address Field 1">
                 </div>
                 <div class="mb-3">
-                    <input type="text" id="address-2" class="form-control" placeholder="Address Field 2">
+                    <input type="text" id="address_field_2" class="form-control" placeholder="Address Field 2">
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-4">
@@ -117,12 +117,14 @@ addresses.forEach( address => {
                         </select>
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" id="postal-2" class="form-control" placeholder="Postal Code">
+                        <input type="text" id="postal_code" class="form-control" placeholder="Postal Code">
+                    </div>
+                    </div>
+                        <button type="button" class="btn btn-primary edit_address_form_button">Submit</button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            <form>
+            </form>
+            </div>
         </li>
     `;
 });
@@ -143,11 +145,64 @@ add_btn.addEventListener('click', () => {
     })
 });
 
+function update_saved_addresses() {
+    let addresses = document.getElementsByClassName("address_string");
+    let saved_addresses = document.getElementById("saved_addresses");
+    let html = `<ul>`;
+    for (let i = 0; i < addresses.length; i++) {
+        html += `<li>`;
+        html += addresses[i].innerHTML;
+        html += `</li>`;
+    }
+    html += `</ul>`;
+    console.log(html);
+    saved_addresses.innerHTML = html;
+}
+
+update_saved_addresses();
+
+//submit edit address functionality
+[...document.getElementsByClassName('edit_address_form_button')].forEach((submit_button) => {
+    submit_button.addEventListener('click', () => {
+        var elementss = submit_button.parentNode;
+        var obj ={};
+        for (var i = 0 ; i < elementss.length ; i++){
+            var key = elementss[i].id;
+            var value = elementss[i].value;
+            obj[key] = value;
+        }
+        if (obj["address_field_1"] == "") {
+            alert('pease enter address field 1');
+            return;
+        }
+        else if (obj["city"] == "") {
+            alert('pease enter city');
+            return;
+        }
+        else if (obj["state"] == "") {
+            alert('pease enter state');
+            return;
+        }
+        else if (obj["postal_code"] == "") {
+            alert('pease enter postal code');
+            return;
+        }
+        var surrounding_li = submit_button.parentNode.parentNode.parentNode;
+        var string_val = surrounding_li.children[0];
+        string_val.innerHTML = `${obj["address_field_1"]} ${obj["address_field_2"]} <br>
+        ${obj["city"]}, ${obj["state"]} ${obj["postal_code"]}`;
+
+        update_saved_addresses();
+    });
+});
+
+
 //delete functionality
 [...document.getElementsByClassName('delete')].forEach((delete_button) => {
     delete_button.addEventListener('click', () => {
         var address = delete_button.parentNode;
-        console.log(address);
         address.remove();
-    })
+        update_saved_addresses();
+    });
 });
+
