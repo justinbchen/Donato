@@ -10,10 +10,6 @@
     font-weight: bold;
 }
 
-.border {
-    border: 5px solid;
-}
-
 .horizontal {
     text-align:center;
 }
@@ -29,9 +25,12 @@
 }
 
 .page {
-    margin-left: 100%;
-    width: 100%;
-    border:2px solid;
+    margin-left: 0%;
+    width: 900px;
+}
+
+.h {
+    height:500px;
 }
 
 #addresses {

@@ -66,11 +66,12 @@ function add_address(address) {
                 ${address.address_field_1} ${address.address_field_2} <br>
                 ${address.city}, ${address.state} ${address.postal_code}
             </div>
-            <button type="button" class="btn btn-success btn-sm edit">Edit</button>
-            <button type="button" class="btn btn-success btn-sm delete">Delete</button>
+            <div class="d-flex bd-highlight">
+                <div class="me-auto p-2 bd-highlight"><button type="button" class="btn btn-success btn-sm edit">Edit</button></div>
+                <div class="p-2 bd-highlight"><button type="button" class="btn btn-success btn-sm delete">Delete</button></div>
+            </div>
 
-            <div class="d-none">
-            <form class="edit_address_form">
+            <form class="edit_address_form d-none">
                 <div class="mb-3">
                     <input type="text" id="address_field_1" class="form-control" placeholder="Address Field 1">
                 </div>
@@ -162,7 +163,6 @@ function add_address(address) {
                 </div>
                 <button type="button" class="btn btn-primary edit_address_form_button">Submit</button>
             </form>
-            </div>
     `;
     let li = document.createElement("li");  
     li.classList.add("border");
@@ -174,7 +174,7 @@ function add_address(address) {
 
     update_saved_addresses();
 
-    li = html_addresses_ul.lastElementChild
+    li = html_addresses_ul.lastElementChild;
     add_edit_functionality(li.getElementsByClassName("edit")[0], li.getElementsByClassName("edit_address_form_button")[0]);
     add_delete_functionality(li.getElementsByClassName("delete")[0]);
 };
@@ -186,7 +186,9 @@ function update_saved_addresses() {
     for (let i = 0; i < addresses.length; i++) {
         html += `<li>`;
         html += "• ";
-        html += addresses[i].innerHTML;
+        let tmp = JSON.parse(JSON.stringify(addresses[i].innerHTML));;
+        tmp = tmp.replace("<br>"," ");
+        html += tmp;
         html += `</li>`;
     }
     html += `</ul>`;
@@ -234,7 +236,7 @@ function add_edit_functionality(edit_button, edit_submit_button) {
 
 function edit_button_interactivity(edit_button) {
     edit_button.addEventListener('click', () => {
-        edit_button.parentNode.children[3].classList.toggle('d-none');
+        edit_button.parentNode.parentNode.parentNode.children[2].classList.toggle('d-none');
     });
 }
 
@@ -263,7 +265,7 @@ function edit_submit_button_interactivity(edit_submit_button) {
             alert('pease enter postal code');
             return;
         }
-        let surrounding_li = form.parentNode.parentNode;
+        let surrounding_li = form.parentNode;
         let string_val = surrounding_li.children[0];
         string_val.innerHTML = `${obj["address_field_1"]} ${obj["address_field_2"]} <br>
         ${obj["city"]}, ${obj["state"]} ${obj["postal_code"]}`;
@@ -275,7 +277,7 @@ function edit_submit_button_interactivity(edit_submit_button) {
 //delete functionality
 function add_delete_functionality(delete_button) {
     delete_button.addEventListener('click', () => {
-        let address = delete_button.parentNode;
+        let address = delete_button.parentNode.parentNode.parentNode;
         address.remove();
         update_saved_addresses();
     });
