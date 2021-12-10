@@ -35,8 +35,7 @@
                         <div class="page">
                             <div class="p-2">
                                 <div class="center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Bob_the_builder.jpg" width="100px" class="img-thumbnail">
-                                    <!--<img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Bob_the_builder.jpg" width="100px">-->
+                                    <img id="profile_pic" src="" width="100spx" class="img-thumbnail">
                                 </div>
                                 <div id="profile_name" class="center item_title">
                                     
@@ -48,7 +47,7 @@
                             </div>
 
                             <!--maybe delete-->
-                            <div class="p-2">
+                            <div class="p-2 center">
                                 <div>possible have you are in % of donators</div>
                             </div>
                             <div class="p-2 center">
@@ -104,8 +103,14 @@
                                                 <!--MODAL COLUMN 1-->
                                                 <div class="item_title">User</div>
                                                 <div class="col">
-                                                    <div class="center">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Bob_the_builder.jpg" width="100px">
+                                                    <div class="center img_wrapper">
+                                                        <img id="profile_pic_modal" src="" width="150px" class="img-thumbnail">
+                                                        <div class="img_overlay btn btn-sm btn-success">
+                                                            <span>update photo</span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="upload_photo_form" class="d-none">
+                                                        <input class="form-control form-control-sm" type="file">
                                                     </div>
                                                     <form id="update_nn_form">
                                                         <div class="row mb-3">

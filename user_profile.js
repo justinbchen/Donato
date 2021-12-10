@@ -1,3 +1,20 @@
+//photo
+var starting_img = 'https://upload.wikimedia.org/wikipedia/en/c/c5/Bob_the_builder.jpg';
+update_img(starting_img);
+
+function update_img(image) {
+    profile_pic_modal = document.getElementById("profile_pic_modal");
+    profile_pic_modal.setAttribute('src', image);
+
+    profile_pic_profile = document.getElementById("profile_pic");
+    profile_pic_profile = profile_pic_profile.setAttribute('src', image);
+
+}
+
+document.getElementsByClassName("img_overlay")[0].addEventListener('click', () => {
+    document.getElementById("upload_photo_form").classList.toggle('d-none');
+});
+
 //name
 var starting_name = 'Bobby BuildMaster';
 update_name(starting_name);

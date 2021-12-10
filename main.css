@@ -110,3 +110,12 @@ ul.t {
 #four-right .card-display{
     display: block;
 }
+
+.img_wrapper {
+    position: relative;
+}
+
+.img_overlay {
+    position: absolute;
+    top: 75%;
+  }
