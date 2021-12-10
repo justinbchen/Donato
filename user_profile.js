@@ -325,7 +325,7 @@ $("#donation-table tbody tr").click(function(){
     }else if(index==3){
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("4");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("8");
-        var html1='<div class="line-common">4 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div><div class="line-common">Children of Dune1</div>'
+        var html1='<div class="line-common">4 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div><div class="line-common">God Emperor of Dune</div>'
         $(".description-content").html(html1);
     }
 })
