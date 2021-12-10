@@ -20,8 +20,8 @@ document.getElementById('btn-dropoff').addEventListener('click', () => {
     document.getElementById('btn-pickup').classList.remove('active');
 });
 
-document.getElementById('addresses').addEventListener('change', () => {
-    if (document.getElementById('addresses').value == 'new-address') {
+document.getElementById('select-address').addEventListener('change', () => {
+    if (document.getElementById('select-address').value == 'new-address') {
         document.getElementById('enter-address').classList.remove('d-none');
     } else {
         document.getElementById('enter-address').classList.add('d-none');
