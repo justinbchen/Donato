@@ -30,28 +30,23 @@ document.getElementById('addresses').addEventListener('change', () => {
 
 
 // datepicker logic adapted from https://stackoverflow.com/questions/56188595/enable-specific-dates-in-bootstrap-datepicker
-const disableDays = ['12/21/21', '12/16,21', '12/18/21', '12/23/21', '12/25/21', '12/31/21', '01/01/22', '01/02/22', '01/04/22'].map(Date.parse);
+const disableDays = ['12/21/21', '12/16/21', '12/18/21', '12/23/21', '12/25/21', '12/31/21', '01/01/22', '01/02/22', '01/04/22'].map(Date.parse);
 
-$(() => {
-    $("#choose-date").datepicker({ 
-            maxViewMode: 2,
-            startDate: '+1d',
-            beforeShowDay: (date) => {
-                if (disableDays.includes(Date.parse(date))) {
-                    return { enabled: false };
-                }
-                else {
-                    return { enabled: true };
-                }
-            },
-            todayHighlight: true,
-            format: "mm/dd/yy",
-            autoclose: true
-    });
-});
-
-$('#choose-date').datepicker().on('changeDate', () => {
-    console.log('hi');
+$("#choose-date").datepicker({ 
+        maxViewMode: 2,
+        startDate: '+1d',
+        beforeShowDay: (date) => {
+            if (disableDays.includes(Date.parse(date))) {
+                return { enabled: false };
+            }
+            else {
+                return { enabled: true };
+            }
+        },
+        todayHighlight: true,
+        format: "mm/dd/yy",
+        autoclose: true
+}).on('changeDate', () => {
     document.getElementById('choose-time').classList.remove('d-none');
 
     document.getElementById('date-wrapper').classList.remove('col-sm-5', 'col-lg-4');
