@@ -299,3 +299,33 @@ function add_delete_functionality(delete_button) {
         update_saved_addresses();
     });
 }
+
+// Donation History
+$("#donation-table tbody tr").click(function(){
+    var str="Donation on "+$(this).children("td").eq(0).html()+" to "+$(this).children("td").eq(1).html();
+    $("#donation-detail-title").html(str);
+    var index=$(this).index();
+    if(index==0){
+        $("#table-details tbody tr").eq(0).children("td").eq(1).html("1");
+        $("#table-details tbody tr").eq(1).children("td").eq(1).html("2");
+        var html1='<div class="line-common">1 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div>'
+        $(".description-content").html(html1);
+    }else if(index==1){
+        $("#table-details tbody tr").eq(0).children("td").eq(1).html("2");
+        $("#table-details tbody tr").eq(1).children("td").eq(1).html("4");
+        var html1='<div class="line-common">2 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div>'
+        $(".description-content").html(html1);
+
+    }else if(index==2){
+        $("#table-details tbody tr").eq(0).children("td").eq(1).html("3");
+        $("#table-details tbody tr").eq(1).children("td").eq(1).html("6");
+        var html1='<div class="line-common">3 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div>'
+        $(".description-content").html(html1);
+
+    }else if(index==3){
+        $("#table-details tbody tr").eq(0).children("td").eq(1).html("4");
+        $("#table-details tbody tr").eq(1).children("td").eq(1).html("8");
+        var html1='<div class="line-common">4 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div><div class="line-common">Children of Dune1</div>'
+        $(".description-content").html(html1);
+    }
+})

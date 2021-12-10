@@ -125,3 +125,37 @@ ul.t {
 #v-pills-tabContent{
     margin-top: 65px;
 }
+#user_profile .tabs2-title{
+text-align: center;
+font-weight: bold;
+}
+#v-pills-donation-schedule{
+    padding:20px;
+}
+#donation-details .details-content{
+    border:2px solid #000;
+    border-radius: 20px;
+    margin:0;
+    padding:40px 20px;
+}
+#donation-details .description-content{
+    border:2px solid #000;
+    border-radius: 5px;
+    padding:5px;
+}
+#donation-table thead tr,#table-details thead tr{
+    background-color: rgb(204, 204, 204);
+}
+#donation-table tbody tr:nth-child(even),#table-details tbody tr:nth-child(even){
+    background-color: rgb(238, 238, 238);
+}
+#donation-table tbody tr:nth-child(odd),#table-details tbody tr:nth-child(odd){
+    background-color: #fff;
+}
+#donation-table tbody tr:hover,#table-details tbody tr:hover{
+    background-color: rgb(156, 186, 247);
+}
+#table-details  tbody tr.active{
+    background-color: rgb(156, 186, 247);
+
+}
