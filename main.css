@@ -46,6 +46,10 @@ ul.t {
     list-style-type: none;
 }
 
+#addresses {
+    padding: 0;
+    list-style-type: none;
+}
 
 #four-left, #four-right{
     display: inline-block;

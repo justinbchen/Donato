@@ -199,7 +199,7 @@ function add_address(address) {
 function update_saved_addresses() {
     let addresses = document.getElementsByClassName("address_string");
     let saved_addresses = document.getElementById("saved_addresses");
-    let html = `<ul>`;
+    let html = `<ul class="a">`;
     for (let i = 0; i < addresses.length; i++) {
         html += `<li>`;
         html += "• ";
