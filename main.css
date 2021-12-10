@@ -1,3 +1,7 @@
+#choose-time {
+    line-height: 300%;
+}
+
 .profile {
     position: fixed;
     top: 2%;
@@ -35,11 +39,6 @@
 
 ul.t {
     margin:0;
-}
-
-#addresses {
-    list-style-type:none;
-    padding: 0;
 }
 
 #saved_addresses ul {
@@ -119,3 +118,6 @@ ul.t {
     position: absolute;
     top: 75%;
   }
+#v-pills-tabContent{
+    margin-top: 65px;
+}
