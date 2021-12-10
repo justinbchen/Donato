@@ -63,4 +63,80 @@ $(".common-line").click(function () {
     $("#four-right .detail-card").removeClass("card-display");
     $("#four-right .detail-card").eq(index).addClass("card-display");
 
-})
+});
+
+// adds item card
+$("#add-item-btn").click(function() {
+    //var index = document.getElementsByClassName("item-card").length + 1;
+    var newel = $('.item-card:last').clone(true);
+    
+    // Selecting last id 
+    var card_id = $(newel).attr("id");
+    var split_id = card_id.split('-');
+    // New index
+    var index = Number(split_id[1]) + 1;
+   
+    // Set id of new element
+    $(newel).find(".item-card").attr("id", "item-" + index);
+    $(newel).find("h2").html("Item " + index);
+
+    // type
+    $(newel).find("label:eq(0)").attr("for", "type-" + index);
+    $(newel).find(".form-select").attr("id", "type-" + index)
+
+    // quantity
+    $(newel).find("label:eq(1)").attr("for", "quant-" + index);
+    $(newel).find("input[type=number]").attr("id", "quant-" + index);
+    $(newel).find("input[type=number]").val("1");
+    /* 
+    $(newel).find("form-control:eq(0)")
+    $(newel).find("form-control:eq(0)").attr("value", "1"); */
+
+    // file
+    $(newel).find("input[type=file]").attr("id", "file-" + index);
+    $(newel).find("input[type=file]").val("");
+
+    // description
+    $(newel).find("label:eq(2)").attr("for", "desc-" + index);
+    $(newel).find("textarea").attr("id", "desc-" + index);
+    $(newel).find("textarea").val("");
+
+    // Insert element
+    $(newel).insertAfter(".item-card:last");
+});
+
+$(".item-card").on("click", ".btn-danger", function(e) {
+    var n_cards = document.getElementsByClassName("item-card").length;
+
+    if (n_cards < 2) {
+        alert("You can't remove more cards!");
+    } else {
+        var card_id = $(this).parent().parent().parent().parent().attr("id");
+        var split_id = card_id.split('-');
+        var index = Number(split_id[1]);
+        console.log(card_id);
+
+        $(this).parent().parent().parent().parent().remove();
+        for(let i = index + 1; i < n_cards; i++) {
+            var j = i - 1;
+            // Set id of element
+            $("#item-" + i).find("h2").html("Item " + j);
+            $("#item-" + i).attr("id", "item-" + j);
+            $("label[for='type-" + i + "']").attr("for", "type-" + j);
+            $("#type-" + i).attr("id", "type-" + j);
+            $("label[for='quant-" + i + "']").attr("for", "quant-" + j);
+            $("#quant-" + i).attr("id", "quant-" + j);
+            $("#file-" + i).attr("id", "file-" + j);
+            $("label[for='desc-" + i + "']").attr("for", "desc-" + j);
+            $("#desc-" + i).attr("id", "desc-" + j);
+            
+            
+
+            // set carousel elements
+            $("#carousel_" + i).attr("id", "#carousel_" + j);
+            $("#carousel_" + j).find(".carousel-control-prev").attr("data-bs-target", "#carousel_" + j);
+            $("#carousel_" + j).find(".carousel-control-next").attr("data-bs-target", "#carousel_" + j);
+
+        }
+    }
+});

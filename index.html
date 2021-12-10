@@ -12,7 +12,7 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -158,33 +158,47 @@
                     </div>
                     <!-- Enter Items Tab -->
                     <div class="tab-pane fade" id="v-pills-items" role="tabpanel" aria-labelledby="v-pills-items-tab">
-                        <div class="item-field" id="item-1">
-                            <h1>Item 1</h1>
-                            <label for="type-1">Type</label>
-                            <select class="form-select" aria-label="select type" id="type-1">
-                                <option selected>- Select -</option>
-                                <option value="1">Food</option>
-                                <option value="2">Clothes</option>
-                                <option value="3">Books</option>
-                                <option value="4">Toys</option>
-                                <option value="5">Furniture</option>
-                                <option value="6">Appliances</option>
-                                <option value="7">Other</option>
-                            </select>
-
-                            <label for="quant-1">Quantity</label>
-                            <input type="number" id="quant-1" name="quant-1" min="0" value="1">
-
-                            <label for="desc-1">Description</label>
-                            <textarea id="desc-1" name="desc-1" rows="4" cols="20"
-                            placeholder="Describe your items"></textarea>
-
-                            <input type="file" class="form-control" id="file-1" placeholder="Upload Photo">
-
-                            <button type="button" class="btn btn-danger">Remove item</button>
-
+                        <div class="card item-card" id="item-1">
+                            <div class="card-body">
+                                <h2>Item 1</h2>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row gy-3">
+                                            <div class="col-sm-8">
+                                                <label for="type-1">Type</label>
+                                                <select class="form-select" aria-label="select type" id="type-1">
+                                                    <option selected>- Select -</option>
+                                                    <option value="1">Food</option>
+                                                    <option value="2">Clothes</option>
+                                                    <option value="3">Books</option>
+                                                    <option value="4">Toys</option>
+                                                    <option value="5">Furniture</option>
+                                                    <option value="6">Appliances</option>
+                                                    <option value="7">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="quant-1">Quantity</label>
+                                                <input type="number" class="form-control" id="quant-1" min="0" value="1">
+                                            </div>
+                                            <div class="col">
+                                                <input type="file" class="form-control" id="file-1" placeholder="Upload Photo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="desc-1">Description</label>
+                                        <textarea class="form-control" id="desc-1" rows="4" cols="20"
+                                        placeholder="Describe your items"></textarea>   
+                                    </div>                                    
+                                    <div class="col">
+                                        <button type="button" class="btn btn-danger">Remove item</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-light">Add more items</button>
+                        <button type="button" class="btn btn-light" id="add-item-btn">Add more items</button>
 
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>

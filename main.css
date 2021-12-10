@@ -159,3 +159,19 @@ font-weight: bold;
     background-color: rgb(156, 186, 247);
 
 }
+
+.btn-danger {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+}
+
+.btn-success {
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+}
+
+.item-card {
+    margin-bottom: 20px;
+}
