@@ -11,24 +11,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- JQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" integrity="sha512-rxThY3LYIfYsVCWPCW9dB0k+e3RZB39f23ylUYTEuZMDrN/vRqLdaCBo/FbvVT6uC2r0ObfPzotsfKF9Qc5W5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Donato</title>
   </head>
   <body>
     <div class='container'>
-        <h1>Donato</h1>
         <div class='nav flex-row'>
             <div class="d-flex align-items-start">
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active" id="v-pills-location-tab" data-bs-toggle="pill" data-bs-target="#v-pills-location" type="button" role="tab" aria-controls="v-pills-location" aria-selected="true">Enter Location</button>
-                <button class="nav-link" id="v-pills-items-tab" data-bs-toggle="pill" data-bs-target="#v-pills-items" type="button" role="tab" aria-controls="v-pills-items" aria-selected="false">Enter Items</button>
-                <button class="nav-link" id="v-pills-time-tab" data-bs-toggle="pill" data-bs-target="#v-pills-time" type="button" role="tab" aria-controls="v-pills-time" aria-selected="false">Choose Time</button>
-                <button class="nav-link" id="v-pills-organization-tab" data-bs-toggle="pill" data-bs-target="#v-pills-organization" type="button" role="tab" aria-controls="v-pills-organization" aria-selected="false">Select Organization</button>
-                <button class="nav-link" id="v-pills-confirm-tab" data-bs-toggle="pill" data-bs-target="#v-pills-confirm" type="button" role="tab" aria-controls="v-pills-confirm" aria-selected="false">Review & Confirm</button>
+                    <h1 class="mt-3 d-flex justify-content-center">Donato</h1>
+                    <button class="nav-link active" id="v-pills-location-tab" data-bs-toggle="pill" data-bs-target="#v-pills-location" type="button" role="tab" aria-controls="v-pills-location" aria-selected="true">Enter Location</button>
+                    <button class="nav-link" id="v-pills-items-tab" data-bs-toggle="pill" data-bs-target="#v-pills-items" type="button" role="tab" aria-controls="v-pills-items" aria-selected="false">Enter Items</button>
+                    <button class="nav-link" id="v-pills-time-tab" data-bs-toggle="pill" data-bs-target="#v-pills-time" type="button" role="tab" aria-controls="v-pills-time" aria-selected="false">Choose Time</button>
+                    <button class="nav-link" id="v-pills-organization-tab" data-bs-toggle="pill" data-bs-target="#v-pills-organization" type="button" role="tab" aria-controls="v-pills-organization" aria-selected="false">Select Organization</button>
+                    <button class="nav-link" id="v-pills-confirm-tab" data-bs-toggle="pill" data-bs-target="#v-pills-confirm" type="button" role="tab" aria-controls="v-pills-confirm" aria-selected="false">Review & Confirm</button>
                 </div>
                 <div class="tab-content" id="v-pills-tabContent">
+                    <h1 class="mt-4"></h1>
+                    <!-- Enter Location tab -->
                     <div class="tab-pane fade show active" id="v-pills-location" role="tabpanel" aria-labelledby="v-pills-location-tab">
                         <h3>I want...</h3>
                         <div class="btn-group" role="group">
@@ -133,6 +142,12 @@
                                         <input type="text" id="postal-2" class="form-control" placeholder="Postal Code">
                                     </div>
                                 </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                      Save address for future donations
+                                    </label>
+                                  </div>
                             </div>
                         </div>
                         <div id="dropoff" class="mb-3 mt-3 d-none">
@@ -175,7 +190,27 @@
                       <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
 
+                    <!-- Choose Time tab -->
                     <div class="tab-pane fade" id="v-pills-time" role="tabpanel" aria-labelledby="v-pills-time-tab">
+                        <h3>Choose a date and time that work best for you!</h3>
+                        <div id="date-wrapper" class="col-sm-5 col-lg-4">
+                            <div class="input-group date">
+                                <input type="text" id="choose-date" class="form-control mb-3" placeholder="Enter date">
+                                <label class="input-group-btn" for="choose-date">
+                                    <span class="btn btn-outline-secondary"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="choose-time" class="mb-3 d-none col-lg-10">
+                            <button type="button" class="btn btn-light">9:00 AM</button>
+                            <button type="button" class="btn btn-light">10:00 AM</button>
+                            <button type="button" class="btn btn-light">10:30 AM</button>
+                            <button type="button" class="btn btn-light">11:00 AM</button>
+                            <button type="button" class="btn btn-light">12:30 PM</button>
+                            <button type="button" class="btn btn-light">3:30 PM</button>
+                            <button type="button" class="btn btn-light">4:00 PM</button>
+                            <button type="button" class="btn btn-light">5:30 PM</button>
+                        </div>
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
                     <div class="tab-pane fade" id="v-pills-organization" role="tabpanel" aria-labelledby="v-pills-organization-tab">
