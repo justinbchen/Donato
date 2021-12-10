@@ -88,7 +88,7 @@ function add_address(address) {
                 <div class="p-2 bd-highlight"><button type="button" class="btn btn-success btn-sm delete">Delete</button></div>
             </div>
 
-            <form class="edit_address_form d-none">
+            <form class="edit_address_form d-none p-3">
                 <div class="mb-3">
                     <input type="text" id="address_field_1" class="form-control" placeholder="Address Field 1">
                 </div>
@@ -243,6 +243,11 @@ document.getElementById("add_address_form_button").addEventListener('click', () 
         return;
     }
     add_address(obj);
+
+    const myModal = new bootstrap.Modal(document.getElementById('profileModal'), {
+        keyboard: false
+    });
+    myModal.hide();
 });
 
 

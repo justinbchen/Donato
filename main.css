@@ -6,8 +6,7 @@
     position: fixed;
     top: 2%;
     right: 2%;
-    border: 3px solid #73AD21;
-  }
+}
 
 .item_title {
     font-size: 1em;
@@ -91,7 +90,7 @@ ul.t {
     font-size: 14px;
 }
 #v-pills-organization .active{
-    background-color: rgb(188,213,172);
+    background-color: rgb(160, 220, 229);
     
 }
 #four-right .line-description{
@@ -153,10 +152,10 @@ font-weight: bold;
     background-color: #fff;
 }
 #donation-table tbody tr:hover,#table-details tbody tr:hover{
-    background-color: rgb(156, 186, 247);
+    background-color: rgb(160, 220, 229);
 }
 #table-details  tbody tr.active{
-    background-color: rgb(156, 186, 247);
+    background-color: rgb(160, 220, 229);
 
 }
 
@@ -166,7 +165,7 @@ font-weight: bold;
     bottom: 10%;
 }
 
-.btn-success {
+.btn-next, .btn-confirm {
     position: fixed;
     right: 5%;
     bottom: 10%;
@@ -174,4 +173,12 @@ font-weight: bold;
 
 .item-card {
     margin-bottom: 20px;
+}
+
+.btn-primary, .btn-success, .btn-secondary {
+    color: white !important;
+}
+
+.btn-primary.active {
+    background-color: rgb(63, 148, 115) !important;
 }
