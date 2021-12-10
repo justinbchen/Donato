@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./main.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -25,6 +25,7 @@
   </head>
   <body>
     <div class='container'>
+        <a href="./user_profile.html" class="btn btn-primary profile">View Profile</a>
         <div class='nav flex-row'>
             <div class="d-flex align-items-start">
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -36,7 +37,6 @@
                     <button class="nav-link" id="v-pills-confirm-tab" data-bs-toggle="pill" data-bs-target="#v-pills-confirm" type="button" role="tab" aria-controls="v-pills-confirm" aria-selected="false">Review & Confirm</button>
                 </div>
                 <div class="tab-content" id="v-pills-tabContent">
-                    <h1 class="mt-4"></h1>
                     <!-- Enter Location tab -->
                     <div class="tab-pane fade show active" id="v-pills-location" role="tabpanel" aria-labelledby="v-pills-location-tab">
                         <h3>I want...</h3>
@@ -48,7 +48,7 @@
                             <h3>Select Address</h3>
                             <select id="addresses" class="form-select">
                                 <option selected>Select Address</option>
-                                <option>70 Morngside Drive</option>
+                                <option>70 Morningside Drive</option>
                                 <option>556 W 114th St</option>
                                 <option value="new-address">Enter New Address...</option>
                             </select>
@@ -145,9 +145,9 @@
                                 <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                                     <label class="form-check-label" for="flexCheckChecked">
-                                      Save address for future donations
+                                    Save address for future donations
                                     </label>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div id="dropoff" class="mb-3 mt-3 d-none">
@@ -156,38 +156,37 @@
                         </div>
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
-
                     <!-- Enter Items Tab -->
                     <div class="tab-pane fade" id="v-pills-items" role="tabpanel" aria-labelledby="v-pills-items-tab">
-                      <div class="item-field" id="item-1">
-                        <h1>Item 1</h1>
-                        <label for="type-1">Type</label>
-                        <select class="form-select" aria-label="select type" id="type-1">
-                            <option selected>- Select -</option>
-                            <option value="1">Food</option>
-                            <option value="2">Clothes</option>
-                            <option value="3">Books</option>
-                            <option value="4">Toys</option>
-                            <option value="5">Furniture</option>
-                            <option value="6">Appliances</option>
-                            <option value="7">Other</option>
-                        </select>
+                        <div class="item-field" id="item-1">
+                            <h1>Item 1</h1>
+                            <label for="type-1">Type</label>
+                            <select class="form-select" aria-label="select type" id="type-1">
+                                <option selected>- Select -</option>
+                                <option value="1">Food</option>
+                                <option value="2">Clothes</option>
+                                <option value="3">Books</option>
+                                <option value="4">Toys</option>
+                                <option value="5">Furniture</option>
+                                <option value="6">Appliances</option>
+                                <option value="7">Other</option>
+                            </select>
 
-                        <label for="quant-1">Quantity</label>
-                        <input type="number" id="quant-1" name="quant-1" min="0" value="1">
+                            <label for="quant-1">Quantity</label>
+                            <input type="number" id="quant-1" name="quant-1" min="0" value="1">
 
-                        <label for="desc-1">Description</label>
-                        <textarea id="desc-1" name="desc-1" rows="4" cols="20"
-                        placeholder="Describe your items"></textarea>
+                            <label for="desc-1">Description</label>
+                            <textarea id="desc-1" name="desc-1" rows="4" cols="20"
+                            placeholder="Describe your items"></textarea>
 
-                        <input type="file" class="form-control" id="file-1" placeholder="Upload Photo">
+                            <input type="file" class="form-control" id="file-1" placeholder="Upload Photo">
 
-                        <button type="button" class="btn btn-danger">Remove item</button>
+                            <button type="button" class="btn btn-danger">Remove item</button>
 
-                      </div>
-                      <button type="button" class="btn btn-light">Add more items</button>
+                        </div>
+                        <button type="button" class="btn btn-light">Add more items</button>
 
-                      <button type="button" class="btn btn-success btn-next">Continue</button>
+                        <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
 
                     <!-- Choose Time tab -->
@@ -213,19 +212,174 @@
                         </div>
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
+
+                    <!-- Choose Organization Tab -->
                     <div class="tab-pane fade" id="v-pills-organization" role="tabpanel" aria-labelledby="v-pills-organization-tab">
+                        <div>
+                            <div id="four-left">
+                                <div class="panel panel-default common-line active">
+                                    <div class="left-icon common-icon active-icon"></div>
+                                    <div class="right-icon">
+                                        <h5>Donation Cent3r</h5>
+                                        <div class="line-description">Short description</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address:33 Columbia St,NY</div>
+                                        <div class="line-description">link:donationcent3r.com</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default common-line ">
+                                    <div class="left-icon common-icon"></div>
+                                    <div class="right-icon">
+                                        <h5>books4kids</h5>
+                                        <div class="line-description">Short description</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address:33 Columbia St,NY</div>
+                                        <div class="line-description">link:books4kids.com</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default common-line">
+                                    <div class="left-icon common-icon"></div>
+                                    <div class="right-icon">
+                                        <h5>Donation Cent3r</h5>
+                                        <div class="line-description">Short description</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address:33 Columbia St,NY</div>
+                                        <div class="line-description">link:donationcent3r.com</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default common-line">
+                                    <div class="left-icon common-icon"></div>
+                                    <div class="right-icon">
+                                        <h5>Donation Cent3r</h5>
+                                        <div class="line-description">Short description</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address:33 Columbia St,NY</div>
+                                        <div class="line-description">link:donationcent3r.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="four-right">
+                                <div class="map-images"></div>
+                                <div class="detail-card card-display">
+                                    <h5>Donation Cent3r</h5>
+                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                    <div class="line-description">tel:111-222-3333</div>
+                                    <div class="line-description">address:33 Columbia St,NY</div>
+                                    <div class="line-description">link:donationcent3r.com</div>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>books4kids</h5>
+                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                    <div class="line-description">tel:111-222-3333</div>
+                                    <div class="line-description">address:33 Columbia St,NY</div>
+                                    <div class="line-description">link:books4kids.com</div>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>Donation Cent3r</h5>
+                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                    <div class="line-description">tel:111-222-3333</div>
+                                    <div class="line-description">address:33 Columbia St,NY</div>
+                                    <div class="line-description">link:donationcent3r.com</div>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>Donation Cent3r</h5>
+                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                    <div class="line-description">tel:111-222-3333</div>
+                                    <div class="line-description">address:33 Columbia St,NY</div>
+                                    <div class="line-description">link:donationcent3r.com</div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-confirm" role="tabpanel" aria-labelledby="v-pills-confirm-tab">
-                        <button type="button" class="btn btn-success btn-next">Continue</button>
+
+                    <!-- Confirmation Tab -->
+                    <div class="tab-pane fade page" id="v-pills-confirm" role="tabpanel" aria-labelledby="v-pills-confirm-tab">
+                        <h3>
+                            Confirmation Page
+                        </h3>
+                        
+                        <div class="d-flex flex-row bd-highlight mb-3">                            
+                            <div class="d-flex flex-grow-1 flex-column align-content-center border-2 border-dark border overflow-scroll h">
+                                <div class="p-2">
+                                    <div class="item_title">Items</div>
+                                    <ul class="t">
+                                        <li>3 books</li>
+                                        <li>1 book</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Item 1 Description</div>
+                                    <div>
+                                        5 novels in the Dune series by Frank Herbert:
+                                        <ul class="t">
+                                            <li>Dune</li>
+                                            <li>Dune Messiah</li>
+                                            <li>Children of Dune</li>
+                                            <li>God Emperor of Dune</li>
+                                            <li>Chapterhouse: Dune</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Item 2 Description</div>
+                                    <div>
+                                        Math Fun for Minecrafters: Grades 3–4
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Date</div>
+                                    <div>Thursday, December 2nd</div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Time</div>
+                                    <div>9:00 A.M.</div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Address</div>
+                                    <div>
+                                        70 Morningside Drive<br>
+                                        New York, NY 10027
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Organization</div>
+                                    <div>books4kids</div>
+                                </div>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success align-self-end" data-bs-toggle="modal" data-bs-target="#confirmationModal">Confirm</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmationModalLabel">Confirmed!</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Your donation pick-up is confirmed!
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script src="./main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-
-  </body>
-</html>
+        </body>
+    </html>

@@ -1,3 +1,115 @@
 #choose-time {
     line-height: 300%;
 }
+
+.profile {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    border: 3px solid #73AD21;
+  }
+
+.item_title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.horizontal {
+    text-align:center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padded {
+    padding: 10% 0;
+}
+
+.page {
+    margin-left: 0%;
+    width: 900px;
+}
+
+.h {
+    height:500px;
+}
+
+ul.t {
+    margin:0;
+}
+
+#saved_addresses ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+
+#four-left, #four-right{
+    display: inline-block;
+}
+#four-right{
+    margin-left: 20px;
+    vertical-align: top;
+    padding-top: 20px;
+    width: calc(100% - 580px);
+}
+.common-line{
+    height: 150px;
+    border-radius: 15px;
+    border:2px solid #000;
+    font-size: 0;
+    width: 550px;
+    margin-bottom: 20px;
+}
+.common-line>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.common-line .left-icon{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 40px;
+    background-size: 100% 100%;
+    background-image: url("./images/house-fill.svg");
+
+}
+.right-icon{
+    width:400px ;
+    height: 146px;
+    padding:10px;
+    border-left: 1px solid #000;
+}
+.right-icon .line-description{
+    font-size: 14px;
+}
+#v-pills-organization .active{
+    background-color: rgb(188,213,172);
+    
+}
+#four-right .line-description{
+    font-size: 14px;
+}
+#four-right .map-images{
+    /* width: 416px; */
+    height: 196px;
+    background-size: 100% 100%;
+    background-image: url("./images/2.png");
+}
+#four-right .detail-card{
+    border: 2px solid #000;
+    border-radius: 0 0 15px 15px;
+    padding:20px;
+    height: 400px;
+    display: none;
+}
+#four-right .card-display{
+    display: block;
+}
+
+#v-pills-tabContent{
+    margin-top: 65px;
+}
