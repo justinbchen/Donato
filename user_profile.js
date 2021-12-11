@@ -305,11 +305,11 @@ $("#donation-table tbody tr").click(function () {
     if (index == 0) {
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("1");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("2");
-        var str ="1 books in the Dune series by Frank Herbert:";
+        var str ="1 book in the Dune series by Frank Herbert:";
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<1;i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Dune' + ' ' + (i+1) + '</div>'
         }
         console.log(str1)
         $(".description-content").children(".line-common").eq(1).html(str1);
@@ -322,7 +322,7 @@ $("#donation-table tbody tr").click(function () {
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<2;i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Dune' + ' ' (i+1) + '</div>'
         }
         $(".description-content").children(".line-common").eq(1).html(str1);
         // var html1 = '<div class="line-common">2 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div>'
@@ -337,7 +337,7 @@ $("#donation-table tbody tr").click(function () {
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<3;i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Dune' + ' '+ (i+1) + '</div>'
         }
         $(".description-content").children(".line-common").eq(1).html(str1);
 
@@ -350,7 +350,7 @@ $("#donation-table tbody tr").click(function () {
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<4;i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Dune' + ' ' + (i+1) + '</div>'
         }
         $(".description-content").children(".line-common").eq(1).html(str1);
     }
@@ -365,16 +365,16 @@ $("#table-details tbody tr").click(function () {
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<$(this).children("td").eq(1).html();i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Dune' + ' ' + (i+1) + '</div>'
         }
         $(".description-content").children(".line-common").eq(1).html(str1);
     } else if (index == 1) {
         console.log($(this).children("td").eq(1).html())
-        var str = $(this).children("td").eq(1).html() + "Furnitures in the Dune series by Frank Herbert:";
+        var str = $(this).children("td").eq(1).html() + " desks in the Ikea Voxnan series:";
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<$(this).children("td").eq(1).html();i++){
-            str1+='<div>Dune' + (i+1) + '</div>'
+            str1+='<div>Desk' + ' ' + (i+1) + '</div>'
         }
         $(".description-content").children(".line-common").eq(1).html(str1);
 
