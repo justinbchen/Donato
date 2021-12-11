@@ -156,6 +156,7 @@ font-weight: bold;
 }
 #table-details  tbody tr.active,#donation-table  tbody tr.active{
     background-color: rgb(156, 186, 247);
+}
 
 .remove-item {
     position: absolute;
