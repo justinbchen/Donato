@@ -37,7 +37,7 @@ function update_phone_number(phone_number) {
 document.getElementById("update_nn_button").addEventListener('click', () => {
     let form = document.getElementById("update_nn_form");
     let obj = {};
-    for (let i = 0 ; i < form.length ; i++) {
+    for (let i = 0; i < form.length; i++) {
         let key = form[i].id;
         let value = form[i].value;
         obj[key] = value;
@@ -55,8 +55,7 @@ document.getElementById("update_nn_button").addEventListener('click', () => {
 
 
 //addresses
-var starting_addresses = [
-    {
+var starting_addresses = [{
         address_field_1: "70 Morningside Drive",
         address_field_2: "",
         city: "New York",
@@ -71,7 +70,7 @@ var starting_addresses = [
         postal_code: "10027"
     }
 ]
-starting_addresses.forEach( address => {
+starting_addresses.forEach(address => {
     add_address(address);
 });
 
@@ -88,7 +87,7 @@ function add_address(address) {
                 <div class="p-2 bd-highlight"><button type="button" class="btn btn-success btn-sm delete">Delete</button></div>
             </div>
 
-            <form class="edit_address_form d-none p-3">
+            <form class="edit_address_form d-none">
                 <div class="mb-3">
                     <input type="text" id="address_field_1" class="form-control" placeholder="Address Field 1">
                 </div>
@@ -181,7 +180,7 @@ function add_address(address) {
                 <button type="button" class="btn btn-primary edit_address_form_button">Submit</button>
             </form>
     `;
-    let li = document.createElement("li");  
+    let li = document.createElement("li");
     li.classList.add("border");
     li.classList.add("mb-5");
     li.classList.add("rounded-3");
@@ -204,7 +203,7 @@ function update_saved_addresses() {
         html += `<li>`;
         html += "• ";
         let tmp = JSON.parse(JSON.stringify(addresses[i].innerHTML));;
-        tmp = tmp.replace("<br>"," ");
+        tmp = tmp.replace("<br>", " ");
         html += tmp;
         html += `</li>`;
     }
@@ -220,7 +219,7 @@ document.querySelector("#add_new_button").addEventListener('click', () => {
 document.getElementById("add_address_form_button").addEventListener('click', () => {
     form = document.getElementById("add_new_address_form");
     let obj = {};
-    for (let i = 0 ; i < form.length ; i++) {
+    for (let i = 0; i < form.length; i++) {
         let key = form[i].id;
         let value = form[i].value;
         obj[key] = value;
@@ -229,25 +228,17 @@ document.getElementById("add_address_form_button").addEventListener('click', () 
     if (obj["address_field_1"] == "") {
         alert('pease enter address field 1');
         return;
-    }
-    else if (obj["city"] == "") {
+    } else if (obj["city"] == "") {
         alert('pease enter city');
         return;
-    }
-    else if (obj["state"] == "") {
+    } else if (obj["state"] == "") {
         alert('pease enter state');
         return;
-    }
-    else if (obj["postal_code"] == "") {
+    } else if (obj["postal_code"] == "") {
         alert('pease enter postal code');
         return;
     }
     add_address(obj);
-
-    const myModal = new bootstrap.Modal(document.getElementById('profileModal'), {
-        keyboard: false
-    });
-    myModal.hide();
 });
 
 
@@ -266,7 +257,7 @@ function edit_submit_button_interactivity(edit_submit_button) {
     edit_submit_button.addEventListener('click', () => {
         let form = edit_submit_button.parentNode;
         let obj = {};
-        for (let i = 0 ; i < form.length ; i++) {
+        for (let i = 0; i < form.length; i++) {
             let key = form[i].id;
             let value = form[i].value;
             obj[key] = value;
@@ -274,16 +265,13 @@ function edit_submit_button_interactivity(edit_submit_button) {
         if (obj["address_field_1"] == "") {
             alert('pease enter address field 1');
             return;
-        }
-        else if (obj["city"] == "") {
+        } else if (obj["city"] == "") {
             alert('pease enter city');
             return;
-        }
-        else if (obj["state"] == "") {
+        } else if (obj["state"] == "") {
             alert('pease enter state');
             return;
-        }
-        else if (obj["postal_code"] == "") {
+        } else if (obj["postal_code"] == "") {
             alert('pease enter postal code');
             return;
         }
@@ -306,31 +294,90 @@ function add_delete_functionality(delete_button) {
 }
 
 // Donation History
-$("#donation-table tbody tr").click(function(){
-    var str="Donation on "+$(this).children("td").eq(0).html()+" to "+$(this).children("td").eq(1).html();
+$("#donation-table tbody tr").click(function () {
+    var str = "Donation on " + $(this).children("td").eq(0).html() + " to " + $(this).children("td").eq(1).html();
     $("#donation-detail-title").html(str);
-    var index=$(this).index();
-    if(index==0){
+    $("#donation-table tbody tr").removeClass("active");
+    $(this).addClass("active");
+    $("#table-details tbody tr").removeClass("active");
+    $("#table-details tbody tr").eq(0).addClass("active");
+    var index = $(this).index();
+    if (index == 0) {
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("1");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("2");
-        var html1='<div class="line-common">1 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div>'
-        $(".description-content").html(html1);
-    }else if(index==1){
+        var str ="1 books in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<1;i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        console.log(str1)
+        $(".description-content").children(".line-common").eq(1).html(str1);
+        // var html1 = '<div class="line-common">1 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div>'
+        // $(".description-content").html(html1);
+    } else if (index == 1) {
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("2");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("4");
-        var html1='<div class="line-common">2 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div>'
-        $(".description-content").html(html1);
+        var str ="2 books in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<2;i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        $(".description-content").children(".line-common").eq(1).html(str1);
+        // var html1 = '<div class="line-common">2 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div>'
+        // $(".description-content").html(html1);
 
-    }else if(index==2){
+    } else if (index == 2) {
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("3");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("6");
-        var html1='<div class="line-common">3 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div>'
-        $(".description-content").html(html1);
+        // var html1 = '<div class="line-common">3 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div>'
+        // $(".description-content").html(html1);
+        var str ="3 books in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<3;i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        $(".description-content").children(".line-common").eq(1).html(str1);
 
-    }else if(index==3){
+    } else if (index == 3) {
         $("#table-details tbody tr").eq(0).children("td").eq(1).html("4");
         $("#table-details tbody tr").eq(1).children("td").eq(1).html("8");
-        var html1='<div class="line-common">4 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div><div class="line-common">God Emperor of Dune</div>'
-        $(".description-content").html(html1);
+        // var html1 = '<div class="line-common">4 novels in the Dune series by Frank Herbert:</div><div class="line-common">Dune</div><div class="line-common">Dune Messiah</div><div class="line-common">Children of Dune</div><div class="line-common">Children of Dune1</div>'
+        // $(".description-content").html(html1);
+        var str ="4 books in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<4;i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        $(".description-content").children(".line-common").eq(1).html(str1);
     }
+})
+$("#table-details tbody tr").click(function () {
+    var index = $(this).index();
+    $("#table-details tbody tr").removeClass("active");
+    $(this).addClass("active");
+    if (index == 0) {
+        console.log($(this).children("td").eq(1).html())
+        var str = $(this).children("td").eq(1).html() + " books in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<$(this).children("td").eq(1).html();i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        $(".description-content").children(".line-common").eq(1).html(str1);
+    } else if (index == 1) {
+        console.log($(this).children("td").eq(1).html())
+        var str = $(this).children("td").eq(1).html() + "Furnitures in the Dune series by Frank Herbert:";
+        $(".description-content").children(".line-common").eq(0).html(str);
+        var str1="";
+        for(i=0;i<$(this).children("td").eq(1).html();i++){
+            str1+='<div>Dune' + (i+1) + '</div>'
+        }
+        $(".description-content").children(".line-common").eq(1).html(str1);
+
+    }
+
 })
