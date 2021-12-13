@@ -97,15 +97,16 @@ ul.t {
 }
 #four-right .map-images, #four-right-2 .map-images{
     /* width: 416px; */
-    height: 196px;
+    height: 280px;
     background-size: 100% 100%;
     background-image: url("./images/2.png");
+    border-radius: 15px 15px 0 0;
 }
 #four-right .detail-card, #four-right-2 .detail-card{
     border: 2px solid #000;
     border-radius: 0 0 15px 15px;
     padding:20px;
-    height: 400px;
+    height: 250px;
     display: none;
 }
 #four-right .card-display, #four-right-2 .card-display{
@@ -181,10 +182,17 @@ font-weight: bold;
 }
 .image-icon{
     display: inline-block;
-    width: 30px;
-    height: 20px;
+    width: 75px;
+    height: 50px;
     background-size: 100% 100%;
-    background-image: url("./images/card-image.svg");
+    background-image: url("./images/dune.jpg");
+}
+.image-icon-2{
+    display: inline-block;
+    width: 75px;
+    height: 50px;
+    background-size: 100% 100%;
+    background-image: url("./images/ikea_desk.jpg");
 }
 
 #nav-link {
