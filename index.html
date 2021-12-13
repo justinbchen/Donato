@@ -206,6 +206,8 @@
                     <!-- Choose Time tab -->
                     <div class="tab-pane fade" id="v-pills-time" role="tabpanel" aria-labelledby="v-pills-time-tab">
                         <h3>Choose a date and time that work best for you!</h3>
+                        <p>Unfortunately, your items cannot be all donated to a single organization, so we have split them up.</p>
+                        <h4>Items 1 and 3 (books and toys)</h4>
                         <div id="date-wrapper" class="col-sm-5 col-lg-4">
                             <div class="input-group date">
                                 <input type="text" id="choose-date" class="form-control mb-3" placeholder="Enter date">
@@ -214,96 +216,184 @@
                                 </label>
                             </div>
                         </div>
-                        <div id="choose-time" class="mb-3 d-none col-lg-10">
-                            <button type="button" class="btn btn-light">9:00 AM</button>
-                            <button type="button" class="btn btn-light">10:00 AM</button>
-                            <button type="button" class="btn btn-light">10:30 AM</button>
-                            <button type="button" class="btn btn-light">11:00 AM</button>
-                            <button type="button" class="btn btn-light">12:30 PM</button>
-                            <button type="button" class="btn btn-light">3:30 PM</button>
-                            <button type="button" class="btn btn-light">4:00 PM</button>
-                            <button type="button" class="btn btn-light">5:30 PM</button>
+                        <div id="choose-time" class="time-chooser mb-3 d-none col-lg-10">
+                            <button type="button" class="btn btn-light times-1">9:00 AM</button>
+                            <button type="button" class="btn btn-light times-1">10:00 AM</button>
+                            <button type="button" class="btn btn-light times-1">10:30 AM</button>
+                            <button type="button" class="btn btn-light times-1">11:00 AM</button>
+                            <button type="button" class="btn btn-light times-1">12:30 PM</button>
+                            <button type="button" class="btn btn-light times-1">3:30 PM</button>
+                            <button type="button" class="btn btn-light times-1">4:00 PM</button>
+                            <button type="button" class="btn btn-light times-1">5:30 PM</button>
+                        </div>
+                        <h4>Items 2 (furniture)</h4>
+                        <div id="date-wrapper-2" class="col-sm-5 col-lg-4">
+                            <div class="input-group date">
+                                <input type="text" id="choose-date-2" class="form-control mb-3" placeholder="Enter date">
+                                <label class="input-group-btn" for="choose-date-2">
+                                    <span class="btn btn-outline-secondary"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="choose-time-2" class="time-chooser mb-3 d-none col-lg-10">
+                            <button type="button" class="btn btn-light times-2">9:00 AM</button>
+                            <button type="button" class="btn btn-light times-2">10:00 AM</button>
+                            <button type="button" class="btn btn-light times-2">10:30 AM</button>
+                            <button type="button" class="btn btn-light times-2">11:00 AM</button>
+                            <button type="button" class="btn btn-light times-2">12:30 PM</button>
+                            <button type="button" class="btn btn-light times-2">3:30 PM</button>
+                            <button type="button" class="btn btn-light times-2">4:00 PM</button>
+                            <button type="button" class="btn btn-light times-2">5:30 PM</button>
                         </div>
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
 
                     <!-- Choose Organization Tab -->
                     <div class="tab-pane fade" id="v-pills-organization" role="tabpanel" aria-labelledby="v-pills-organization-tab">
-                        <div>
-                            <div id="four-left">
-                                <div class="panel panel-default common-line active">
-                                    <div class="left-icon common-icon active-icon"></div>
-                                    <div class="right-icon">
-                                        <h5>Donation Cent3r</h5>
-                                        <div class="line-description">Short description</div>
-                                        <div class="line-description">tel:111-222-3333</div>
-                                        <div class="line-description">address:33 Columbia St,NY</div>
-                                        <div class="line-description">link:donationcent3r.com</div>
+                        <h3>These are the available locations for your chosen time slots.</h3>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-books-tab" data-bs-toggle="tab" data-bs-target="#nav-books" type="button" role="tab" aria-controls="nav-books" aria-selected="true">12/2 9:00 AM (Books and Toys)</button>
+                                <button class="nav-link" id="nav-toys-tab" data-bs-toggle="tab" data-bs-target="#nav-toys" type="button" role="tab" aria-controls="nav-toys" aria-selected="false">12/3 10:00 AM (Furniture)</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content pt-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active organizations-info" id="nav-books" role="tabpanel" aria-labelledby="nav-books-tab">
+                                <div id="four-left">
+                                    <div class="panel panel-default common-line active">
+                                        <div class="left-icon common-icon active-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent3r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 3900 Broadway, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line ">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>books4kids</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 33 Columbia St, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent1r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 66 Order St, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent2r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 38 Roaree St, New York NY</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default common-line ">
-                                    <div class="left-icon common-icon"></div>
-                                    <div class="right-icon">
+                                <div id="four-right">
+                                    <div class="map-images"></div>
+                                    <div class="detail-card card-display">
+                                        <h5>Donation Cent3r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                        <div class="line-description">tel: 111-222-3333</div>
+                                        <div class="line-description">address: 3900 Broadway, New York NY</div>
+                                        <div class="line-description">link: donationcent3r.com</div>
+                                    </div>
+                                    <div class="detail-card">
                                         <h5>books4kids</h5>
-                                        <div class="line-description">Short description</div>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
                                         <div class="line-description">tel:111-222-3333</div>
-                                        <div class="line-description">address:33 Columbia St,NY</div>
+                                        <div class="line-description">address: 33 Columbia St, New York NY</div>
                                         <div class="line-description">link:books4kids.com</div>
                                     </div>
-                                </div>
-                                <div class="panel panel-default common-line">
-                                    <div class="left-icon common-icon"></div>
-                                    <div class="right-icon">
-                                        <h5>Donation Cent3r</h5>
-                                        <div class="line-description">Short description</div>
+                                    <div class="detail-card">
+                                        <h5>Donation Cent1r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
                                         <div class="line-description">tel:111-222-3333</div>
-                                        <div class="line-description">address:33 Columbia St,NY</div>
-                                        <div class="line-description">link:donationcent3r.com</div>
+                                        <div class="line-description">address: 66 Order St, New York NY</div>
+                                        <div class="line-description">link:donationcent1r.com</div>
                                     </div>
-                                </div>
-                                <div class="panel panel-default common-line">
-                                    <div class="left-icon common-icon"></div>
-                                    <div class="right-icon">
-                                        <h5>Donation Cent3r</h5>
-                                        <div class="line-description">Short description</div>
+                                    <div class="detail-card">
+                                        <h5>Donation Cent2r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
                                         <div class="line-description">tel:111-222-3333</div>
-                                        <div class="line-description">address:33 Columbia St,NY</div>
-                                        <div class="line-description">link:donationcent3r.com</div>
+                                        <div class="line-description">address: 38 Roaree St, New York NY</div>
+                                        <div class="line-description">link:donationcent2r.com</div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="four-right">
-                                <div class="map-images"></div>
-                                <div class="detail-card card-display">
-                                    <h5>Donation Cent3r</h5>
-                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
-                                    <div class="line-description">tel:111-222-3333</div>
-                                    <div class="line-description">address:33 Columbia St,NY</div>
-                                    <div class="line-description">link:donationcent3r.com</div>
+                            <div class="tab-pane fade organizations-info" id="nav-toys" role="tabpanel" aria-labelledby="nav-toys-tab">
+                                <div id="four-left-2">
+                                    <div class="panel panel-default common-line-2 active">
+                                        <div class="left-icon common-icon active-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent4r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 3800 Broadway, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line-2">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>chairs4kids</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 22 Columbia St, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line-2">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent5r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 8 Traitor St, New York NY</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default common-line-2">
+                                        <div class="left-icon common-icon"></div>
+                                        <div class="right-icon">
+                                            <h5>Donation Cent6r</h5>
+                                            <div class="line-description mb-1">Short description</div>
+                                            <div class="line-description">address: 1754 Roaree St, New York NY</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="detail-card">
-                                    <h5>books4kids</h5>
-                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
-                                    <div class="line-description">tel:111-222-3333</div>
-                                    <div class="line-description">address:33 Columbia St,NY</div>
-                                    <div class="line-description">link:books4kids.com</div>
-                                </div>
-                                <div class="detail-card">
-                                    <h5>Donation Cent3r</h5>
-                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
-                                    <div class="line-description">tel:111-222-3333</div>
-                                    <div class="line-description">address:33 Columbia St,NY</div>
-                                    <div class="line-description">link:donationcent3r.com</div>
-                                </div>
-                                <div class="detail-card">
-                                    <h5>Donation Cent3r</h5>
-                                    <div class="line-description">Some long description that makes this place appealing to donate</div>
-                                    <div class="line-description">tel:111-222-3333</div>
-                                    <div class="line-description">address:33 Columbia St,NY</div>
-                                    <div class="line-description">link:donationcent3r.com</div>
+                                <div id="four-right-2">
+                                    <div class="map-images"></div>
+                                    <div class="detail-card card-display">
+                                        <h5>Donation Cent4r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                        <div class="line-description">tel: 111-222-3333</div>
+                                        <div class="line-description">address: 3800 Broadway, New York NY</div>
+                                        <div class="line-description">link: donationcent3r.com</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <h5>chairs4kids</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address: 22 Columbia St, New York NY</div>
+                                        <div class="line-description">link:chairs4kids.com</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <h5>Donation Cent5r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address: 8 Traitor St, New York NY</div>
+                                        <div class="line-description">link:donationcent1r.com</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <h5>Donation Cent6r</h5>
+                                        <div class="line-description">Some long description that makes this place appealing to donate</div>
+                                        <div class="line-description">tel:111-222-3333</div>
+                                        <div class="line-description">address: 1754 Roaree St, New York NY</div>
+                                        <div class="line-description">link:donationcent2r.com</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <button type="button" class="btn btn-success btn-next">Continue</button>
                     </div>
 
@@ -316,6 +406,7 @@
                         <div class="d-flex flex-row bd-highlight mb-3">                            
                             <div class="d-flex flex-grow-1 flex-column align-content-center border-2 border-dark border overflow-scroll h">
                                 <div class="p-2">
+                                    <h4>Donation 1: Books and Toys</h4>
                                     <div class="item_title">Items</div>
                                     <ul class="t">
                                         <li>3 books</li>
@@ -338,7 +429,7 @@
                                 </div>
 
                                 <div class="p-2">
-                                    <div class="item_title">Item 2 Description</div>
+                                    <div class="item_title">Item 3 Description</div>
                                     <div>
                                         Math Fun for Minecrafters: Grades 3–4
                                     </div>
@@ -366,6 +457,44 @@
                                     <div class="item_title">Organization</div>
                                     <div>books4kids</div>
                                 </div>
+
+                                <div class="p-2">
+                                    <h4>Donation 2: Furniture</h4>
+                                    <div class="item_title">Items</div>
+                                    <ul class="t">
+                                        <li>3 pieces of furniture</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Item 2 Description</div>
+                                    <div>
+                                        3 IKEA chairs, INGOLF line, white
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Date</div>
+                                    <div>Friday, December 3rd</div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Time</div>
+                                    <div>10:00 A.M.</div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Address</div>
+                                    <div>
+                                        70 Morningside Drive<br>
+                                        New York, NY 10027
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="item_title">Organization</div>
+                                    <div>chairs4kids</div>
+                                </div>
                             </div>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-success align-self-end btn-confirm" data-bs-toggle="modal" data-bs-target="#confirmationModal">Confirm</button>
@@ -378,7 +507,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Your donation pick-up is confirmed!
+                                                Your donation pick-ups are confirmed!
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>

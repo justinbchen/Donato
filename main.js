@@ -53,6 +53,49 @@ $("#choose-date").datepicker({
     document.getElementById('date-wrapper').classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
 });
 
+$("#choose-date-2").datepicker({ 
+    maxViewMode: 2,
+    startDate: '+1d',
+    beforeShowDay: (date) => {
+        if (disableDays.includes(Date.parse(date))) {
+            return { enabled: false };
+        }
+        else {
+            return { enabled: true };
+        }
+    },
+    todayHighlight: true,
+    format: "mm/dd/yy",
+    autoclose: true
+}).on('changeDate', () => {
+    document.getElementById('choose-time-2').classList.remove('d-none');
+
+    document.getElementById('date-wrapper-2').classList.remove('col-sm-5', 'col-lg-4');
+    document.getElementById('date-wrapper-2').classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
+});
+
+[...document.getElementsByClassName('times-1')].forEach((button) => {
+    button.addEventListener('click', () => {
+        [...document.getElementsByClassName('times-1')].forEach((button) => {
+            button.classList.remove('btn-primary');
+            button.classList.add('btn-light');
+        });
+        button.classList.remove('btn-light');
+        button.classList.add('btn-primary');
+    });
+});
+
+[...document.getElementsByClassName('times-2')].forEach((button) => {
+    button.addEventListener('click', () => {
+        [...document.getElementsByClassName('times-2')].forEach((button) => {
+            button.classList.remove('btn-primary');
+            button.classList.add('btn-light');
+        });
+        button.classList.remove('btn-light');
+        button.classList.add('btn-primary');
+    });
+});
+
 
 $(".common-line").click(function () {
     var index = $(this).index();
@@ -62,6 +105,17 @@ $(".common-line").click(function () {
     $(this).children(".left-icon").removeClass("common-icon").addClass("active-icon");
     $("#four-right .detail-card").removeClass("card-display");
     $("#four-right .detail-card").eq(index).addClass("card-display");
+
+});
+
+$(".common-line-2").click(function () {
+    var index = $(this).index();
+    $("#four-left-2 .common-line-2").removeClass("active");
+    $(this).addClass("active");
+    $("#four-left-2 .left-icon").removeClass("active-icon").addClass("common-icon");
+    $(this).children(".left-icon").removeClass("common-icon").addClass("active-icon");
+    $("#four-right-2 .detail-card").removeClass("card-display");
+    $("#four-right-2 .detail-card").eq(index).addClass("card-display");
 
 });
 

@@ -1,4 +1,4 @@
-#choose-time {
+.time-chooser {
     line-height: 300%;
 }
 
@@ -49,16 +49,16 @@ ul.t {
     list-style-type: none;
 }
 
-#four-left, #four-right{
+#four-left, #four-right, #four-left-2, #four-right-2{
     display: inline-block;
 }
-#four-right{
+#four-right, #four-right-2{
     margin-left: 20px;
     vertical-align: top;
     padding-top: 20px;
     width: calc(100% - 580px);
 }
-.common-line{
+.common-line, .common-line-2{
     height: 150px;
     border-radius: 15px;
     border:2px solid #000;
@@ -66,11 +66,11 @@ ul.t {
     width: 550px;
     margin-bottom: 20px;
 }
-.common-line>div{
+.common-line>div, .common-line-2>div{
     display: inline-block;
     vertical-align: top;
 }
-.common-line .left-icon{
+.common-line .left-icon, .common-line-2 .left-icon{
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -88,27 +88,27 @@ ul.t {
 .right-icon .line-description{
     font-size: 14px;
 }
-#v-pills-organization .active{
+.organizations-info .active{
     background-color: rgb(160,220,229);
     
 }
-#four-right .line-description{
+#four-right .line-description, #four-right-2 .line-description{
     font-size: 14px;
 }
-#four-right .map-images{
+#four-right .map-images, #four-right-2 .map-images{
     /* width: 416px; */
     height: 196px;
     background-size: 100% 100%;
     background-image: url("./images/2.png");
 }
-#four-right .detail-card{
+#four-right .detail-card, #four-right-2 .detail-card{
     border: 2px solid #000;
     border-radius: 0 0 15px 15px;
     padding:20px;
     height: 400px;
     display: none;
 }
-#four-right .card-display{
+#four-right .card-display, #four-right-2 .card-display{
     display: block;
 }
 
@@ -185,4 +185,8 @@ font-weight: bold;
     height: 20px;
     background-size: 100% 100%;
     background-image: url("./images/card-image.svg");
+}
+
+#nav-link {
+    background-color: white !important;
 }
