@@ -273,3 +273,34 @@ td.day-inactive {
     margin-right: 5px;
     margin-top: 5px;
 }
+
+.common-line-3{
+    height: 130px;
+    border-radius: 15px;
+    border:2px solid #000;
+    font-size: 0;
+    width: 500px;
+    margin-bottom: 20px;
+}
+.common-line-3>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.common-line-3 .left-icon{
+    display: inline-block;
+    width: 40px;
+    height: 60px;
+    margin: 40px;
+    background-size: 100% 100%;
+    background-image: url("./images/house-fill.svg");
+
+}
+.right-icon-2{
+    width: 300px ;
+    height: 126px;
+    padding:10px;
+    border-left: 1px solid #000;
+}
+.right-icon-2 .line-description{
+    font-size: 14px;
+}
