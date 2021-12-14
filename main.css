@@ -198,3 +198,78 @@ font-weight: bold;
 #nav-link {
     background-color: white !important;
 }
+
+/* .calendar-month {
+    vertical-align: bottom;
+} */
+
+th.left {
+    justify-content: left;
+    text-align: left;
+}
+
+th.right {
+    justify-content: right;
+    text-align: right;
+}
+
+.donation-schedule th {
+    width: 4.5vw;
+}
+
+.donation-schedule td {
+    width: 4.5vw;
+    height: 4.5vw;
+    vertical-align: top;
+}
+
+tr.week th, tr.month th {
+    border: none;
+}
+
+td.day {
+    cursor: pointer;
+}
+
+td.day-inactive {
+    color: gray;
+}
+
+.circle-sel {
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    /* padding: 10px; */
+    background: #2eb883;
+    border: 1px solid gray;
+    color: #000;
+    text-align: center;
+    /* font: 32px Arial, sans-serif; */
+}
+
+.circle-non {
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    /* padding: 10px; */
+    background: #57b2c0;
+    border: 1px solid gray;
+    color: #000;
+    text-align: center;
+    /* font: 32px Arial, sans-serif; */
+}
+
+.circle-appt {
+    border-radius: 50%;
+    width: 1vw;
+    height: 1vw;
+    /* padding: 10px; */
+    background: black;
+    border: 1px solid black;
+    color: #000;
+    text-align: center;
+    /* font: 32px Arial, sans-serif; */
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
