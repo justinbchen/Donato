@@ -307,3 +307,7 @@ td.day-inactive {
 .right-icon-2 .line-description{
     font-size: 14px;
 }
+
+.sidebar {
+    width: 180px;
+}

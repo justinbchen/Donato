@@ -287,7 +287,7 @@ $("#table-details tbody tr").click(function () {
         $(".description-content").children(".line-common").eq(1).html(str1);
     } else if (index == 1) {
         console.log($(this).children("td").eq(1).html())
-        var str = $(this).children("td").eq(1).html() + " desks in the Ikea Voxnan series:";
+        var str = $(this).children("td").eq(1).html() + " desks in the Ikea Voxnan furniture series:";
         $(".description-content").children(".line-common").eq(0).html(str);
         var str1="";
         for(i=0;i<$(this).children("td").eq(1).html();i++){
