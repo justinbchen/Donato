@@ -293,7 +293,7 @@ td.day-inactive {
     display: inline-block;
     width: 40px;
     height: 60px;
-    margin: 40px;
+    margin: 30px 40px;
     background-size: 100% 100%;
     background-image: url("./images/house-fill.svg");
 
