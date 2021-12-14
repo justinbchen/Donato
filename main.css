@@ -241,9 +241,9 @@ td.day-inactive {
     height: 2vw;
     /* padding: 10px; */
     background: #2eb883;
-    border: 1px solid gray;
     color: #000;
     text-align: center;
+    transform: translateY(-4px);
     /* font: 32px Arial, sans-serif; */
 }
 
@@ -253,10 +253,14 @@ td.day-inactive {
     height: 2vw;
     /* padding: 10px; */
     background: #57b2c0;
-    border: 1px solid gray;
     color: #000;
     text-align: center;
+    transform: translateY(-4px);
     /* font: 32px Arial, sans-serif; */
+}
+
+.date-sel {
+    transform: translateY(4px);
 }
 
 .circle-appt {
@@ -264,8 +268,7 @@ td.day-inactive {
     width: 1vw;
     height: 1vw;
     /* padding: 10px; */
-    background: black;
-    border: 1px solid black;
+    background: #aaadb1;
     color: #000;
     text-align: center;
     /* font: 32px Arial, sans-serif; */
