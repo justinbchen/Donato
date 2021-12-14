@@ -131,7 +131,7 @@ $("#add-item-btn").click(function() {
     var index = Number(split_id[1]) + 1;
    
     // Set id of new element
-    $(newel).find(".item-card").attr("id", "item-" + index);
+    $(newel).attr("id", "item-" + index);
     $(newel).find("h2").html("Item " + index);
 
     // type
@@ -168,10 +168,9 @@ $(".item-card").on("click", ".btn-danger", function(e) {
         var card_id = $(this).parent().parent().parent().parent().attr("id");
         var split_id = card_id.split('-');
         var index = Number(split_id[1]);
-        console.log(card_id);
 
         $(this).parent().parent().parent().parent().remove();
-        for(let i = index + 1; i < n_cards; i++) {
+        for(let i = index + 1; i <= n_cards; i++) {
             var j = i - 1;
             // Set id of element
             $("#item-" + i).find("h2").html("Item " + j);
